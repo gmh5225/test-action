@@ -23,7 +23,8 @@ jobs:
           && sudo apt-get install build-essential make cmake \
           && sudo apt-get install p7zip-full p7zip-rar \
           && sudo apt-get install g++-11-aarch64-linux-gnu libstdc++-11-dev-arm64-cross gcc-11 g++-11 \
-          && wget -nv https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04.tar.xz && tar xf clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04.tar.xz
+          && wget -nv https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04.tar.xz \
+          && tar xf clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04.tar.xz
 
           clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04/bin/clang --version
           
