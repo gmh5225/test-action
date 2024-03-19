@@ -18,7 +18,9 @@ jobs:
     - name: do
       run: |
           Invoke-WebRequest -Uri "https://github.com/gmh5225/android-ndk-windows-llvm-msvc/releases/download/r26c/android-ndk-r26c-windows-llvm-msvc.7z" -OutFile "android-ndk-r26c-windows-llvm-msvc.7z"
-          7z x "android-ndk-r26c-windows-llvm-msvc.7z" -o"android-ndk-r26c"
+          7z x "android-ndk-r26c-windows-llvm-msvc.7z"
+          del android-ndk-r26c-windows-llvm-msvc.7z
+          7z a -mx=9 android-ndk-r26c-windows-llvm-msvc.7z android-ndk-r26c-windows-llvm-msvc
 
           
         
