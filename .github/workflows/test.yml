@@ -10,22 +10,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest]
+        os: [windows-latest]
     env:
       BUILD_TYPE: Release
     steps:
 
-    - name: Setup build deps
+    - name: do
       run: |
-          sudo wget -qO /usr/local/bin/ninja.gz https://github.com/ninja-build/ninja/releases/latest/download/ninja-linux.zip \
-          && sudo gunzip /usr/local/bin/ninja.gz \
-          && sudo chmod a+x /usr/local/bin/ninja \
-          && sudo apt-get install build-essential make cmake \
-          && sudo apt-get install p7zip-full p7zip-rar \
-          && sudo apt-get install g++-11-aarch64-linux-gnu libstdc++-11-dev-arm64-cross gcc-11 g++-11 \
-          && wget -nv https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04.tar.xz \
-          && tar xf clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04.tar.xz
+          Invoke-WebRequest -Uri "https://github.com/gmh5225/android-ndk-windows-llvm-msvc/releases/download/r26c/android-ndk-r26c-windows-llvm-msvc.7z" -OutFile "android-ndk-r26c-windows-llvm-msvc.7z"
+          7z x "android-ndk-r26c-windows-llvm-msvc.7z" -o"android-ndk-r26c"
 
-          clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04/bin/clang --version
           
         
